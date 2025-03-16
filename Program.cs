@@ -2,11 +2,18 @@
 
 namespace ProjectName
 {
-    public class HaloGeneric
+    public class DataGeneric<T>
     {
-        public void SapaUser<T>(T userName)
+        private T data;
+
+        public DataGeneric(T data)
         {
-            Console.WriteLine($"Halo user {userName}");
+            this.data = data;
+        }
+
+        public void PrintData()
+        {
+            Console.WriteLine($"Data yang tersimpan adalah: {data}");
         }
     }
 
@@ -14,8 +21,8 @@ namespace ProjectName
     {
         static void Main(string[] args)
         {
-            HaloGeneric halo = new HaloGeneric();
-            halo.SapaUser("satria");
+            DataGeneric<string> data = new DataGeneric<string>("103022300071");
+            data.PrintData();
         }
     }
 }
